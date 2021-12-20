@@ -1,0 +1,54 @@
+@model IEnumerable<Flyturismo.Models.Destino>
+
+@{
+    ViewData["Title"] = "Destino";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="text-center m-4">
+    <p class="display-4">Onde você quer ir?</p>
+
+    <p>   <a asp-action="Create" class=" btn btn-success text-white border border-dark">Novo destino</a></p>
+     <img class="m-3 w-25 img-fluid border border-info" src="image/Imagem-Destinos.png" alt="" srcset="">
+
+    </div>
+
+<table class="table">
+    <thead>
+        <tr class=" bg-dark text-white">
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pais)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-info">
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pais)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_Destino" class="btn btn-outline-info">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_Destino" class="btn btn-outline-info">Mostrar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_Destino" class="btn btn-outline-info">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

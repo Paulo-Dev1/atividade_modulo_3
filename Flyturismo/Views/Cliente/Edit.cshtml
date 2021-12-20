@@ -1,0 +1,70 @@
+@model Flyturismo.Models.Cliente
+
+@{
+    ViewData["Title"] = "Cliente";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<p class="display-4">Editando Usuário</p>
+<p class="h2">Para alterar dados desse Usuário utilize o formulário abaixo.</p>
+<hr />
+<div class="row jumbotron jumbotron-fluid bg-secondary text-white">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id_Cliente" />
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" value="Preencha o Formulários" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Idade" class="control-label"></label>
+                <input asp-for="Idade" class="form-control" />
+                <span asp-validation-for="Idade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CPF" class="control-label"></label>
+                <input asp-for="CPF" class="form-control" />
+                <span asp-validation-for="CPF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Endereco" class="control-label"></label>
+                <input asp-for="Endereco" class="form-control" />
+                <span asp-validation-for="Endereco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DestinoId_destino" class="control-label">Cidades Disponiveis</label>
+                <select asp-for="DestinoId_destino" class="form-control" asp-items="ViewBag.DestinoId_destino"></select>
+                <span asp-validation-for="DestinoId_destino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HospedagemId_hospedagem" class="control-label">Data de Entrada Disponiveis</label>
+                <select asp-for="HospedagemId_hospedagem" class="form-control" asp-items="ViewBag.HospedagemId_hospedagem"></select>
+                <span asp-validation-for="HospedagemId_hospedagem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-info text-white" />
+            </div>
+        </form>
+        <a asp-action="Index" class="btn btn-dark text-white border border-white">&#8592;</a>
+    </div>
+</div>
+
+
+
+</body>
+</html>

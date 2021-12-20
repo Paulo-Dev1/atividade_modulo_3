@@ -1,0 +1,64 @@
+@model Flyturismo.Models.Hospedagem
+
+@{
+    ViewData["Title"] = "Hospedagem";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>hospedagem</title>
+</head>
+<body>
+
+<div class="text-center">
+    <p class="display-4">Detalhamento da sua hospedagem </p>
+    <hr />
+
+    <table class="table table-hover table-dark">
+
+        <tr>
+            <th class = "col-sm-2 ">
+                @Html.DisplayNameFor(model => model.Tipo_Hospedagem)
+            </th>
+            <td class = "col-sm-10 ">
+                @Html.DisplayFor(model => model.Tipo_Hospedagem)
+            </td>
+        </tr>
+
+        <tr>
+        <th class = "col-sm-2 ">
+            @Html.DisplayNameFor(model => model.Data_Entrada)
+        </th>
+        <td class = "col-sm-10 ">
+            @Html.DisplayFor(model => model.Data_Entrada)
+        </td>
+
+        </tr>
+
+        <tr>
+        <th class = "col-sm-2 ">
+            @Html.DisplayNameFor(model => model.Data_Saida)
+        </th>
+
+        <td class = "col-sm-10 ">
+            @Html.DisplayFor(model => model.Data_Saida)
+        </td>
+
+            
+
+        </tr>
+    </table>
+
+        <div>
+                <a asp-action="Edit" asp-route-id="@Model.Id_Hospedagem" class="btn btn-info text-white m-3">Editar</a> 
+                
+                <a asp-action="Index" class="btn btn-dark text-white  m-3">&#8592;</a>
+            </div>
+
+    </div>
+
+</body>
+</html>

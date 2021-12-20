@@ -1,0 +1,45 @@
+@model Flyturismo.Models.Destino
+
+@{
+    ViewData["Title"] = "Destino";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<p class="display-4">Editando Destino</p>
+<p class="h2">Para alterar dados desse Destino utilize o formulário abaixo.</p>
+<hr />
+<div class="row jumbotron jumbotron-fluid bg-secondary text-white">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id_Destino" />
+            <div class="form-group">
+                <label asp-for="Cidade" class="control-label">Cidade</label>
+                <input asp-for="Cidade" class="form-control" />
+                <span asp-validation-for="Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pais" class="control-label">País</label>
+                <input asp-for="Pais" class="form-control" />
+                <span asp-validation-for="Pais" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-info text-white" />
+            </div>
+        </form>
+
+        <a asp-action="Index" class="btn btn-dark text-white border border-white">&#8592;</a>
+    </div>
+</div>
+
+
+</body>
+</html>

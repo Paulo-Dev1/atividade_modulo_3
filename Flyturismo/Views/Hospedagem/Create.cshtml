@@ -1,0 +1,49 @@
+@model Flyturismo.Models.Hospedagem
+
+@{
+    ViewData["Title"] = "Hospedagem";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Criar</title>
+</head>
+<body>
+
+<p class="display-4">Insira os dados para uma nova Hospedagem</p>
+<hr />
+<div class="row jumbotron jumbotron-fluid bg- text-body">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Tipo_Hospedagem" class="control-label">Tipo de Hospedagem</label>
+                <p class="text-black-50">Ex: resort, hotel ou um nome de hospedagem...</p>
+                <input asp-for="Tipo_Hospedagem" class="form-control" />
+                <span asp-validation-for="Tipo_Hospedagem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data_Entrada" class="control-label">Data de Entrada</label>
+                <input asp-for="Data_Entrada" class="form-control" type="date" />
+                <span asp-validation-for="Data_Entrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data_Saida" class="control-label">Data de Saída</label>
+                <input asp-for="Data_Saida" class="form-control" type="date" />
+                <span asp-validation-for="Data_Saida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enviar" class="btn btn-info text-white border border-white" />
+            </div>
+        </form>
+        <a asp-action="Index" class="btn btn-dark text-white border border-white">&#8592;</a>
+    </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+@model IEnumerable<Flyturismo.Models.Hospedagem>
+
+@{
+    ViewData["Title"] = "Hospedagem";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<div class="text-center m-4">
+    <p class="display-4">Crie seu cronograma de hospedagem</p>
+    <a asp-action="Create" class="btn btn-success text-white border border-dark ">Nova Hospedagem</a>
+    <br>
+        <img class="m-3 w-50 img-fluid border border-info" src="https://images.pexels.com/photos/6284232/pexels-photo-6284232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" srcset="">
+        
+  
+
+    
+</div>
+
+<table class="table" >
+    <thead>
+        <tr class=" bg-dark text-white">
+            <th >
+                @Html.DisplayNameFor(model => model.Tipo_Hospedagem) 
+                
+            </th >
+            <th >
+                @Html.DisplayNameFor(model => model.Data_Entrada)
+            </th>
+            <th >
+                @Html.DisplayNameFor(model => model.Data_Saida)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-info">
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo_Hospedagem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_Entrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_Saida)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-outline-info" asp-route-id="@item.Id_Hospedagem">Editar</a> |
+                <a asp-action="Details" class="btn btn-outline-info" asp-route-id="@item.Id_Hospedagem">Mostrar</a> |
+                <a asp-action="Delete" class="btn btn-outline-info" asp-route-id="@item.Id_Hospedagem">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

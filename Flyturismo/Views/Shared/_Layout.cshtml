@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Flyturismo</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+
+<style>
+
+   
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    background-image: url("/image/Home1.png");
+    
+}
+
+</style>
+
+</head>
+<body class="bg-ligth" >
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-info border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand btn-outline-light rounded" asp-area="" asp-controller="Home" asp-action="Index"><div><img src="https://static.vecteezy.com/system/resources/previews/001/208/510/non_2x/airplane-png.png"  width="100" alt=""/></div>Página Inicial</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark  m-3 font-weight-bold btn-outline-light rounded " asp-area="" asp-controller="Destino" asp-action="Index">Destinos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark  m-3 font-weight-bold btn-outline-light rounded " asp-area="" asp-controller="Hospedagem" asp-action="Index">Hospedagens</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark  m-3 font-weight-bold btn-outline-light rounded " asp-area="" asp-controller="Cliente" asp-action="Index">Área do Cliente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark  m-3 font-weight-bold btn-outline-light rounded " asp-area="" asp-controller="Home" asp-action="Promocao">Promoções</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark  m-3 font-weight-bold btn-outline-light rounded" asp-area="" asp-controller="Home" asp-action="Contato">Contato</a>
+                        </li>
+                    </ul>
+
+                    
+
+                     <img src="https://cdn-icons-png.flaticon.com/512/761/761488.png" width="100" alt="" srcset="">
+
+     
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-secundary bg-info text-center">
+        <div class="container">
+            &copy; 2021 - Flyturismo - Paulo Miguel Rodrigues
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
